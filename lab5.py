@@ -20,12 +20,12 @@ class Sentence:
     def __str__(self):
         # return self.text_string + self.letters
         # return self.text_string + ' ' + ''.join(map(str, self.letters))
-        sentence_string = ""
-        for sentence_element in self.sentence_elements:
-            if isinstance(sentence_element, Word):
-                sentence_string += '' + str(sentence_element) + ' '
+        sentence_string = "" + str(self.sentence_elements[0]);
+        for index in range(1, len(self.sentence_elements)):
+            if isinstance(self.sentence_elements[index], Word):
+                sentence_string += ' ' + str(self.sentence_elements[index])
             else:
-                sentence_string += '' + str(sentence_element)
+                sentence_string += '' + str(self.sentence_elements[index])
 
         # return ' '.join(map(str, self.sentence_elements))
         return sentence_string
